@@ -78,9 +78,9 @@ fn main() {
     // println!("{}", book.description());
     // println!("{}", audiobook.description())
 
-//   print_media(audiobook);
-//   print_media(movie);
-//   print_media(book);
+    // print_media(audiobook);
+    // print_media(movie);
+    // print_media(book);
 
     catalog.add(audiobook);
     catalog.add(movie);
@@ -88,15 +88,8 @@ fn main() {
     catalog.add(podcast);
     catalog.add(placeholder);
 
-    let item = catalog.get_by_index(0);
+    let item = catalog.get_by_index(40);
+    let placeholder = Media::Placeholder;
     
-    // println!("{:#?}", item);
-    match catalog.get_by_index(0) {
-        Some(value) => {
-            println!("Item: {:#?}", value);
-        }
-        None => {
-            println!("No value here");
-        }
-    }
+    println!("{:#?}", item.unwrap_or(&placeholder));
 }
